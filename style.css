@@ -43,7 +43,7 @@ html
     transform: rotate(90deg) scale(2) translate(0);
     box-shadow: inset 0 0 200px 160px #000000;
     /*stopped for maintenance */
-    animation: pageName 5s linear 1;
+    /*animation: pageName 5s linear 1;*/
 }
 
 /*animation frame*/
@@ -693,65 +693,97 @@ footer
 
 /*main content (container2) elements style*/
 
-.userWarp
+.jobWarp
 {
     margin: 3em;
     padding: 0;
-    display: grid;
-    grid-template-areas: "infoHead" "userInfo";
     width: 85em;
-
-}
-
-.userHead
-{
-    margin: 0.5em;
-    grid-area: infoHead;
-    background: green;
-    display: inline-grid;
-    justify-items: center;
-    grid-template-areas: "Name JobTitle JobApllied CV";
-    padding: 1.5em;
-    border: 2px solid transparent;
-    border-radius: 1em;
-    color: wheat;
-
-}
-
-.userList
-{
-    margin: 0;
-    grid-area: userInfo;
     display: flex;
-    flex-direction: column;
+    justify-items: center;
+
+}
+
+
+.jobList
+{
+    margin: 0 2em;
     width: 90em;
     height: 30em;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
 }
 
-.user
+.job
 {
     display: inline-grid;
-    grid-template-areas: "Name JobTitle JobApplied Cv";
+    grid-template-areas:
+            "jobT"
+            "jobDec"
+            "viewJob";
     justify-items: center;
     padding: 1em;
     margin: 1em;
     border: 3px solid transparent;
     border-radius: 5em;
-    width: 84em;
+    width: 40em;
 }
 
-.user:nth-child(even)
+.job:nth-child(even)
 {
     background: mediumseagreen;
 }
-.user:nth-child(odd) {
+.job:nth-child(odd) {
     background: darkseagreen;
 }
 
-.userInfo {
+.jobTitle
+{
+    grid-area: jobT;
+    height: 5vh;
     display: inline-grid;
-    justify-content: center;
-    width: 15em;
-    padding: 15px 0;
-    overflow-x: auto;
+    justify-content: left;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: cursive;
+    text-shadow: 4px 10px 20px black;
+}
+
+.jobDec
+{
+    grid-area: jobDec;
+    height: fit-content;
+    padding: 1em 3em;
+    margin: 1em;
+    overflow: auto;
+    background: #d0b89d;
+    border: 2px solid transparent;
+    border-radius: 1em;
+    font-size: 25px;
+
+}
+
+.viewJob
+{
+    grid-area: viewJob;
+    height: fit-content;
+    padding: 0.5em;
+    display: inline-grid;
+    justify-items: center;
+}
+
+.viewJobBtn
+{
+    background: linear-gradient(45deg, #ff5e00, #f7bc74);
+    border-radius: 30em;
+    padding: 0.5em 2em;
+    font-size: 25px;
+    margin: 0 -0.5em;
+    box-shadow: inset 1px 4px 20px 4px black;
+}
+.viewJobBtn input[type="submit"]
+{
+    background: transparent;
+    font-size: 25px;
+    font-family: monospace;
+    border: 1px solid transparent;
 }
